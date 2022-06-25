@@ -3,6 +3,7 @@
 #include "dialoglogin.h"
 #include "registration.h"
 #include "edit_information.h"
+#include "search.h"
 #include "list.h"
 #include "history_show.h"
 #include "buy_ticket.h"
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->pushButton_search->setVisible(false);
     ui->pushButton_history->setVisible(false);
     ui->pushButton_list->setVisible(false);
     ui->removeFilm->setVisible(false);
@@ -63,6 +65,7 @@ void MainWindow::on_log_in_clicked()
     }
    else if(tmp.USERNAME!="" && tmp.PASSWORD!="" && checkLogin(person)==true)
     {
+        ui->pushButton_search->setVisible(true);
         ui->pushButton_list->setVisible(true);
         ui->registration->setVisible(false);
         ui->log_in->setVisible(false);
@@ -83,6 +86,7 @@ void MainWindow::on_log_in_clicked()
 
 void MainWindow::on_log_out_clicked()
 {
+    ui->pushButton_search->setVisible(false);
     ui->setPassword->setVisible(false);
     ui->pushButton_list->setVisible(false);
     ui->setUsername->setVisible(false);
@@ -112,12 +116,14 @@ void MainWindow::on_registration_clicked()
    else if(tmp.USERNAME!="" && tmp.PASSWORD!="" && checkName(person)==true)
     {
         ui->setPassword->setVisible(true);
+        ui->setPassword->setText("");
         ui->setUsername->setVisible(true);
-        ui->buy_ticket->setVisible(true);
+        ui->setUsername->setText("");
+       // ui->buy_ticket->setVisible(true);
         ui->password->setVisible(true);
         ui->username->setVisible(true);
-        ui->setPassword->setText(tmp.PASSWORD);
-        ui->setUsername->setText(tmp.USERNAME);
+       // ui->setPassword->setText(tmp.PASSWORD);
+      //  ui->setUsername->setText(tmp.USERNAME);
         QMessageBox::information(this,"message","your registration was successfully");
     }
     else {
@@ -209,4 +215,11 @@ void MainWindow::on_pushButton_history_clicked()
     history_show history_sh;
     history_sh.setModal(true);
     history_sh.exec();
+}
+
+void MainWindow::on_pushButton_search_clicked()
+{
+    search se;
+    se.setModal(true);
+    se.exec();
 }
