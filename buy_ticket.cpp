@@ -100,14 +100,16 @@ void buy_ticket::on_confirm_clicked()
                                }
                            }
                            fclose(fptr);
-                           ui->confirm->setVisible(false);
+                          // ui->confirm->setVisible(false);
                            QMessageBox::information(this,"message","your buy was successfully");
+                           ui->confirm->setVisible(false);
                        }
 
                    }
 
                    else {
                        QMessageBox::information(this,"warning","tickets of this film is over");
+                       ui->confirm->setVisible(true);
                    }
 
 
