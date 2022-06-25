@@ -35,6 +35,8 @@ private slots:
 
     void on_pushButton_history_clicked();
 
+    void on_pushButton_search_clicked();
+
 private:
     Ui::MainWindow *ui;
     FILE* fptr;
