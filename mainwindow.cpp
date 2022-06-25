@@ -63,6 +63,7 @@ void MainWindow::on_log_in_clicked()
     }
    else if(tmp.USERNAME!="" && tmp.PASSWORD!="" && checkLogin(person)==true)
     {
+        ui->pushButton_list->setVisible(true);
         ui->registration->setVisible(false);
         ui->log_in->setVisible(false);
         ui->setPassword->setVisible(true);
@@ -83,6 +84,7 @@ void MainWindow::on_log_in_clicked()
 void MainWindow::on_log_out_clicked()
 {
     ui->setPassword->setVisible(false);
+    ui->pushButton_list->setVisible(false);
     ui->setUsername->setVisible(false);
     ui->buy_ticket->setVisible(false);
     ui->log_in->setVisible(true);
@@ -91,6 +93,7 @@ void MainWindow::on_log_out_clicked()
     ui->edit->setVisible(false);
     ui->removeFilm->setVisible(false);
     ui->pushButton_history->setVisible(false);
+    ui->pushButton_list->setVisible(false);
 }
 
 void MainWindow::on_registration_clicked()
