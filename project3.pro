@@ -37,6 +37,7 @@ SOURCES += \
         mainwindow.cpp \
         registration.cpp \
         remove_film.cpp \
+        search.cpp \
         temp.cpp \
         tmpactor.cpp \
         tmpfilm.cpp \
@@ -55,6 +56,7 @@ HEADERS += \
         mainwindow.h \
         registration.h \
         remove_film.h \
+        search.h \
         temp.h \
         tmpactor.h \
         tmpfilm.h \
@@ -70,7 +72,8 @@ FORMS += \
         list.ui \
         mainwindow.ui \
         registration.ui \
-        remove_film.ui
+        remove_film.ui \
+        search.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
