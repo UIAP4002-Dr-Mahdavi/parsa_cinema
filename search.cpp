@@ -41,7 +41,7 @@ void search::on_pushButton_director_clicked()
 void search::on_pushButton_actor_clicked()
 {
     ui->pushButton_genre->setVisible(false);
-    ui->pushButton_genre->setVisible(false);
+    ui->pushButton_director->setVisible(false);
     checkGenre=false;
     checkActor=true;
     checkDirector=false;
